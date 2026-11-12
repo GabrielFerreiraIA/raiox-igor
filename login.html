@@ -31,7 +31,7 @@
         <span class="access-kicker">ACESSO RESERVADO</span>
         <h2>Seu Raio-X está pronto.</h2>
         <p>Digite a senha compartilhada para explorar a análise.</p>
-        <form method="post" action="/login">
+        <form id="login-form">
           <label for="password">Senha de acesso</label>
           <div class="password-field"><input id="password" name="password" type="password" autocomplete="current-password" required><button type="button" id="toggle-password" aria-label="Mostrar senha" aria-pressed="false">Mostrar</button></div>
           <p class="error-message" id="login-error" role="alert" hidden>Senha incorreta. Confira e tente novamente.</p>
@@ -52,7 +52,17 @@
       toggle.setAttribute('aria-label', visible ? 'Ocultar senha' : 'Mostrar senha');
       toggle.setAttribute('aria-pressed', String(visible));
     });
-    if (new URLSearchParams(location.search).has('erro')) document.getElementById('login-error').hidden = false;
+    document.getElementById('login-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const error = document.getElementById('login-error');
+      if (field.value.trim() === 'igor123') {
+        sessionStorage.setItem('raiox_igor_access', 'ok');
+        location.replace('index.html');
+      } else {
+        error.hidden = false;
+        field.select();
+      }
+    });
   </script>
 </body>
 </html>

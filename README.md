@@ -1,21 +1,18 @@
 # Raio-X Igor · Multiplix
 
-Resumo visual da reunião de diagnóstico de 11/11/2026, com acesso por senha validada no servidor. A senha do cliente é comunicada separadamente e não deve entrar no repositório.
+Resumo visual da reunião de diagnóstico de 11/11/2026. Site estático em HTML, CSS e JavaScript, com senha simples na própria página.
 
-## Prévia local com login
+## Abrir localmente
 
-1. Copie `.env.example` para `.env.local`.
-2. Defina `RAIOX_PASSWORD` com a senha combinada e substitua `RAIOX_SESSION_SECRET` por uma chave aleatória longa (32 caracteres ou mais).
-3. Execute `npm install` e `npm run dev`.
-4. Abra `http://127.0.0.1:4184/`.
+Abra `index.html` no navegador. Para visualizar por um endereço local, execute `python -m http.server 4184` nesta pasta e acesse `http://127.0.0.1:4184/`.
 
-O servidor local usa a mesma validação e o mesmo cookie assinado usados na Vercel. Abrir `index.html` diretamente ou usar um servidor estático ignora a camada de acesso; compartilhe apenas a versão hospedada com o proxy ativo.
+A senha é `igor123`. O acesso fica registrado durante a sessão da aba. O botão “Sair” limpa esse acesso.
 
 ## Publicar na Vercel
 
-Envie esta pasta como raiz de um repositório. Na configuração do projeto da Vercel, adicione as variáveis de ambiente `RAIOX_PASSWORD` = senha combinada e `RAIOX_SESSION_SECRET` = uma chave aleatória com pelo menos 32 caracteres. O arquivo `vercel.json` ativa o proxy que protege o Raio-X e os scripts; os logos e a página de login permanecem acessíveis antes da autenticação. Não envie `.env.local` ao repositório.
+Importe o repositório `GabrielFerreiraIA/raiox-igor` na Vercel. Use a configuração padrão para site estático, sem comando de build e sem variáveis de ambiente.
 
-O projeto não exige build. Depois do deploy, teste uma janela anônima: abrir `/` deve levar a `/login.html`; uma senha incorreta deve falhar; a senha combinada deve liberar o Raio-X.
+Esta senha funciona apenas como barreira visual. A lógica e o conteúdo estão no navegador e no repositório público, portanto podem ser acessados por quem inspecionar os arquivos.
 
 ## Critério de conteúdo
 

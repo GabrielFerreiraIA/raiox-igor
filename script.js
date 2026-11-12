@@ -19,6 +19,10 @@ choiceCards.forEach((card) => {
 });
 
 document.getElementById('print-page')?.addEventListener('click', () => window.print());
+document.getElementById('logout')?.addEventListener('click', () => {
+  sessionStorage.removeItem('raiox_igor_access');
+  location.replace('login.html');
+});
 
 let ticking = false;
 function updateProgress() {

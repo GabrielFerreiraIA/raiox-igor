@@ -7,6 +7,13 @@
   <meta name="robots" content="noindex, nofollow">
   <meta name="description" content="Raio-X da conversa de diagnóstico entre Igor e a Multiplix: crescimento, qualidade, papéis e decisões em aberto.">
   <title>Raio-X de Igor | Multiplix</title>
+  <script>
+    try {
+      if (sessionStorage.getItem('raiox_igor_access') !== 'ok') location.replace('login.html');
+    } catch {
+      location.replace('login.html');
+    }
+  </script>
   <link rel="icon" href="assets/multiplix-symbol.jpg" type="image/jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -229,6 +236,6 @@
     </section>
   </main>
 
-  <footer class="footer"><div class="shell footer-inner"><a class="brand" href="#inicio" aria-label="Multiplix, voltar ao início"><img src="assets/multiplix-symbol.jpg" alt="" width="36" height="36"><span>MULTIPLIX</span></a><p>Raio-X da reunião de diagnóstico com Igor · síntese dos pontos discutidos.</p><a href="#inicio">Voltar ao início ↑</a><form class="logout-form" method="post" action="/logout"><button type="submit">Sair</button></form></div></footer>
+  <footer class="footer"><div class="shell footer-inner"><a class="brand" href="#inicio" aria-label="Multiplix, voltar ao início"><img src="assets/multiplix-symbol.jpg" alt="" width="36" height="36"><span>MULTIPLIX</span></a><p>Raio-X da reunião de diagnóstico com Igor · síntese dos pontos discutidos.</p><a href="#inicio">Voltar ao início ↑</a><button class="logout-button" id="logout" type="button">Sair</button></div></footer>
 </body>
 </html>
