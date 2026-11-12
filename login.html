@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#181B24">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Acesso ao Raio-X de Igor | Multiplix</title>
+  <link rel="icon" href="assets/multiplix-symbol.jpg" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <main class="login-layout">
+    <section class="login-story" aria-labelledby="login-title">
+      <div class="story-inner">
+        <div class="brand"><img src="assets/multiplix-symbol.jpg" width="40" height="40" alt=""><span>MULTIPLIX</span></div>
+        <div class="story-copy">
+          <span class="eyebrow"><i></i> RAIO-X DO DIAGNÓSTICO <b>/</b> IGOR</span>
+          <h1 id="login-title">Uma análise clara para decidir <em>o próximo movimento.</em></h1>
+          <p>Igor, reunimos os fatos da conversa, os pontos que você destacou e as decisões que ficaram em aberto para o crescimento da sua operação.</p>
+        </div>
+        <div class="story-foot"><span>DIAGNÓSTICO · 11 NOV 2026</span><span>PREPARADO PELA MULTIPLIX</span></div>
+      </div>
+    </section>
+    <section class="login-access" aria-label="Acesso reservado">
+      <div class="access-inner">
+        <div class="access-mark" aria-hidden="true"><img src="assets/multiplix-symbol.jpg" alt=""></div>
+        <span class="access-kicker">ACESSO RESERVADO</span>
+        <h2>Seu Raio-X está pronto.</h2>
+        <p>Digite a senha compartilhada para explorar a análise.</p>
+        <form method="post" action="/login">
+          <label for="password">Senha de acesso</label>
+          <div class="password-field"><input id="password" name="password" type="password" autocomplete="current-password" required><button type="button" id="toggle-password" aria-label="Mostrar senha" aria-pressed="false">Mostrar</button></div>
+          <p class="error-message" id="login-error" role="alert" hidden>Senha incorreta. Confira e tente novamente.</p>
+          <button class="submit" type="submit">Acessar o Raio-X <span aria-hidden="true">→</span></button>
+        </form>
+        <small>A análise reúne apenas os pontos discutidos na reunião.</small>
+      </div>
+      <div class="access-footer">MULTIPLIX <span>·</span> GRUPO UNBK</div>
+    </section>
+  </main>
+  <script>
+    const field = document.getElementById('password');
+    const toggle = document.getElementById('toggle-password');
+    toggle.addEventListener('click', () => {
+      const visible = field.type === 'password';
+      field.type = visible ? 'text' : 'password';
+      toggle.textContent = visible ? 'Ocultar' : 'Mostrar';
+      toggle.setAttribute('aria-label', visible ? 'Ocultar senha' : 'Mostrar senha');
+      toggle.setAttribute('aria-pressed', String(visible));
+    });
+    if (new URLSearchParams(location.search).has('erro')) document.getElementById('login-error').hidden = false;
+  </script>
+</body>
+</html>

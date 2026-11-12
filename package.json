@@ -1,0 +1,13 @@
+{
+  "name": "raiox-igor-multiplix",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file=.env.local dev-server.mjs",
+    "check": "node --test"
+  },
+  "dependencies": {
+    "@vercel/functions": "^3.0.0"
+  }
+}
